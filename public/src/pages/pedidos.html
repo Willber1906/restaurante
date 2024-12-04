@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos - Sabor do Brasil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="src/styles/pedidos.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-utensils">Sabor do Brasil</i>
+            </div>
+        </header>
+
+        <main>
+            <div class="conteudo">
+                <h1>Pratos Prontos</h1>
+                <p>Escolha a Região, e se delicie</p>
+                
+                <div id="produtos" class="produtos">
+             
+                </div>
+            </div>
+ 
+              
+            <div class="conteudo">
+                <h1>Monte seu prato</h1>
+                <p>Monte com seu gosto</p>
+                
+                <div id="self" class="produtos">
+             
+                </div> 
+            </div>
+                <div id="carrinhobox">
+                    <div class="conteudocarrinho">
+                        <h3>Seu Carrinho</h3>
+                        <div id="produtoscarrinho">
+            
+                            <div class="item-prod">
+                                <div class="thumb"><img src="" alt=""></div>
+                                <div class="info">
+                                    <p></p>
+                                </div>
+                                <div class="price"></div>
+                            </div>
+                            
+                        </div>
+                        <div class="total-cart">Total: <span id="totalGeral">R$0,00</span></div>
+                        <div id="exibircarrinho" class="header"><p><span id="count_prod">0</span><i class="fa-solid fa-cart-shopping"></i></p></div>
+                    </div>
+                        <button class= "finalizar" onclick="finalizarCompra()">Finalizar Pedido</button>
+                </div>
+            
+        </main>
+    </div>
+    <script src="src/styles/javascript/listProds.js"></script>
+    <script src="src/styles/javascript/pedidos.js"></script>
+    <script>
+        function adicionarAoCarrinho(produto) {
+            alert('Produto adicionado ao carrinho: ' + produto);
+            window.location.href = 'carrinho.html?produto=' + encodeURIComponent(produto);
+        }
+        function finalizarCompra(){
+            if(!carrinho.length){
+                alert("Seu carrinho esta vazio")
+                return
+            }
+            window.location.href = 'pagamento.html'
+        }
+    </script>
+</body>
+</html>

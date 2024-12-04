@@ -1,0 +1,59 @@
+#dishes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.dish {
+    width: calc(25% - 20px); /* 4 colunas com espaço de 20px */
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dish img {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    object-fit: cover; /* Garante que a imagem seja recortada adequadamente */
+    border-bottom: 2px solid #f5f5f5;
+}
+
+.dish-title {
+    margin: 10px 0 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dish-description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.dish-price {
+    margin-top: auto; /* Empurra os botões para o final */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    padding: 10px 0;
+}
+
+@media (max-width: 1024px) {
+    .dish {
+        width: calc(50% - 20px); /* Duas colunas */
+    }
+}
+
+@media (max-width: 600px) {
+    .dish {
+        width: calc(100% - 20px); /* Uma coluna */
+    }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/src/styles/login.css">    
+</head>
+<body>
+    <form id="login-form" method="POST" action="/login">
+        <h3>Login</h3>
+        <input type="text" placeholder="Login" id="login" required name="login">
+        <input type="password" placeholder="Senha" id="senha" required name="senha">
+        <button type="submit">Entrar</button>
+        <a href="cadastro.html" class="cadastrar">Cadastrar-se</a> 
+        
+    </form>
+
+    <script>
+        // const loginForm = document.getElementById('login-form');
+        // loginForm.addEventListener('submit', function(event) {
+        //     event.preventDefault();
+        //    // login();
+        //    loginForm.submit();
+        // });
+
+        function login() {
+            var login = document.getElementById('login').value;
+            var senha = document.getElementById('senha').value;
+
+            if(login === 'admin' && senha === 'admin') {
+                alert('Login efetuado com sucesso!');
+                window.location.href = '/';
+            } else {
+                alert('Login ou senha inválidos');
+            }
+        }
+    </script>
+</body>
+</html>
